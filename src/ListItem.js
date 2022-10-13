@@ -11,7 +11,7 @@ class ListItem extends Component {
     // this.setState({ isVisible: this.props._isVisible })
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.isDeleted !== this.props.isDeleted) {
       this.setState({ isVisible: nextProps.isDeleted === true ? false : true })
       // this.forceUpdate()

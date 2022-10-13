@@ -9,13 +9,13 @@ export default class AnimatedFlatlist extends React.Component {
     data: []
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     if(!this.state.data.length) {
       this.setState({data: this.props.items})
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const { items = [], id } = nextProps
     const { data = [] } = this.state
     const deleted = _.difference(data, items).map(item => {
